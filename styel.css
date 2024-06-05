@@ -1,0 +1,81 @@
+*
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-size: 2000px; 
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #228B22
+}
+
+header {
+    background-color: #000000; 
+    color: #228B22; 
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 25px;
+}
+
+nav {
+    margin-top: 20px;
+    text-align: center;
+}
+
+button {
+    margin: 5px;
+    padding: 8px 16px;
+    background-color: #000000;
+    color: #228B22; 
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+button:hover {
+    background-color: #228B22; 
+    color: #000000; 
+}
+
+section {
+    text-align: left;
+    background-color: #228B22;
+    color: white;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 10px;
+    display: flex; /* Add flex display for section */
+    align-items: flex-start; /* Align items at the start */
+}
+
+section img {
+    margin-left: 20px; /* Space between image and text */
+    width: 500px; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+p {
+    font-size: 20px;
+    text-align: center;
+    margin: 0 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.content-box {
+    background-color: #333; 
+    color: #fff;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+} header h1:hover{
+    color: grey;
+}

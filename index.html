@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enriquez Eugene's Personal Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-size: 2000px; 
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #228B22
+        }
+
+        header {
+            background-color: #000000; 
+            color: #228B22; 
+            text-align: center;
+            padding: 20px 0;
+            border-radius: 25px;
+        }
+
+        nav {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        button {
+            margin: 5px;
+            padding: 8px 16px;
+            background-color: #000000;
+            color: #228B22; 
+            border: none;
+            cursor: pointer;
+            border-radius: 30px;
+        }
+
+        button:hover {
+            background-color: #228B22; 
+            color: #000000; 
+        }
+
+        section {
+            text-align: left;
+            background-color: #228B22;
+            color: white;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            display: flex; /* Add flex display for section */
+            align-items: flex-start; /* Align items at the start */
+        }
+
+        section img {
+            margin-left: 20px; /* Space between image and text */
+            width: 500px; /* Adjust as needed */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        p {
+            font-size: 20px;
+            text-align: center;
+            margin: 0 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .content-box {
+            background-color: #333; 
+            color: #fff;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        } header h1:hover{
+            color: grey;
+        } .hidden:hover{
+            color: aliceblue;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="content-box">
+        <header>
+            <h1>Enriquez Eugene's Personal Information</h1>
+        </header>
+
+        <button id="exploreButton" onclick="toggleMore()">Let's Explore more about </button>
+
+        <nav class="hidden">
+            <button onclick="showSection('personal')">Personal Background</button>
+            <button onclick="showSection('educational')">Educational Background</button>
+            <button onclick="showSection('course')">Course Taken</button>
+            <button onclick="showSection('hobbies')">Hobbies and Interests</button>
+            <button onclick="showSection('dream')">Dream Job</button>
+        </nav>
+
+        <section id="personal" class="hidden">
+            <div>
+                I'm Eugene Enriquez I'm 19 year old and I love the color of pink and I really love coffee and nature.
+            </div>
+        </section>
+
+        <section id="educational" class="hidden">
+            <ul>
+                <li>San Jose Elementary School: school year 2010 - 2016</li>
+                <li>start in buboy elementary school and went in Madalena National High school in his junior high and senior high.</li>
+            </ul>
+        </section>
+        <section id="course" class="hidden">
+            I'm currently taking the Bachelor of Science in Information Technology with specialization of System Development.
+        </section>
+        <section id="hobbies" class="hidden">
+            My hobbies is are having a nature trip with my friends.
+        </section>
+        <section id="dream" class="hidden">
+            I want to become a Professional Programmer someday.
+        </section>
+    </div>
+
+    <script>
+        function toggleMore() {
+            var nav = document.querySelector('nav');
+            nav.classList.toggle('hidden');
+            // Hide all sections when the button is clicked again
+            var sections = document.querySelectorAll('section');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].classList.add('hidden');
+            }
+            // Reset button text to original state
+            document.getElementById('exploreButton').textContent = 'Let\'s Explore more about Eugene';
+        }
+
+        function showSection(sectionId) {
+            // Hide all sections first
+            var sections = document.querySelectorAll('section');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].classList.add('hidden');
+            }
+            // Show the requested section
+            var section = document.getElementById(sectionId);
+            section.classList.remove('hidden');
+            // Hide the navigation when a section is shown
+            var nav = document.querySelector('nav');
+            nav.classList.add('hidden');
+            // Change button text based on the clicked section
+            var exploreButton = document.getElementById('exploreButton');
+            switch(sectionId) {
+                case 'personal':
+                    exploreButton.textContent = 'Personal Background';
+                    break;
+                case 'educational':
+                    exploreButton.textContent = 'Educational Background';
+                    break;
+                case 'course':
+                    exploreButton.textContent = 'Course Taken';
+                    break;
+                case 'hobbies':
+                    exploreButton.textContent = 'Hobbies and Interests';
+                    break;
+                case 'dream':
+                    exploreButton.textContent = 'Dream Job';
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
